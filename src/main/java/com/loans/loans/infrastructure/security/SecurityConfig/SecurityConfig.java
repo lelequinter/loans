@@ -29,6 +29,7 @@ public class SecurityConfig {
         .authorizeHttpRequests(auth -> auth
             // * Endpoints públicos
             .requestMatchers(HttpMethod.POST, "/users").permitAll()
+            .requestMatchers("/auth/login").permitAll()
             .anyRequest().authenticated())
         // ! Manejo de 401 no autorizado automitico
         .exceptionHandling(ex -> ex

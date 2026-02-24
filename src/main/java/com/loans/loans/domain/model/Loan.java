@@ -2,7 +2,6 @@ package com.loans.loans.domain.model;
 
 import java.util.UUID;
 import java.math.BigDecimal;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 import jakarta.persistence.*;
