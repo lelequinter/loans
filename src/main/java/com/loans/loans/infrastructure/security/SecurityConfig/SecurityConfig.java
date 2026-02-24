@@ -8,11 +8,18 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+
+import com.loans.loans.infrastructure.security.JwtAuthenticationFilter.JwtAuthenticationFilter;
 
 import jakarta.servlet.http.HttpServletResponse;
+import lombok.RequiredArgsConstructor;
 
 @Configuration
+@RequiredArgsConstructor
 public class SecurityConfig {
+
+  private final JwtAuthenticationFilter jwtAuthenticationFilter;
 
   @Bean
   public PasswordEncoder passwordEncoder2() {
@@ -31,6 +38,7 @@ public class SecurityConfig {
             .requestMatchers(HttpMethod.POST, "/users").permitAll()
             .requestMatchers("/auth/login").permitAll()
             .anyRequest().authenticated())
+        .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class)
         // ! Manejo de 401 no autorizado automitico
         .exceptionHandling(ex -> ex
             .authenticationEntryPoint((request, response, authException) -> {

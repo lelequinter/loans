@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.loans.loans.application.dto.Result.LoginResult;
 import com.loans.loans.application.dto.request.LoginRequest;
 import com.loans.loans.application.dto.response.LoginResponse;
-import com.loans.loans.application.usecase.LoginUsecase;
+import com.loans.loans.application.usecase.login.LoginUsecase;
 
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletResponse;

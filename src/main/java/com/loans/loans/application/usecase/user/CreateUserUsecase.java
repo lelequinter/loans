@@ -1,4 +1,4 @@
-package com.loans.loans.application.usecase;
+package com.loans.loans.application.usecase.user;
 
 
 import org.springframework.security.crypto.password.PasswordEncoder;

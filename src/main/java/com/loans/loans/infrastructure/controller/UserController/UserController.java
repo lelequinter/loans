@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.loans.loans.application.dto.request.CreateUserRequest;
 import com.loans.loans.application.dto.response.UserResponse;
-import com.loans.loans.application.usecase.CreateUserUsecase;
+import com.loans.loans.application.usecase.user.CreateUserUsecase;
 
 import lombok.RequiredArgsConstructor;
 
